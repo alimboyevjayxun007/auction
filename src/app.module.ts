@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
+import { UserModule } from './user/user.module';
+import { MailModule } from './mail/mail.module';
+import { ProductModule } from './product/product.module';
 
 @Module({
   imports: [AuthModule,
@@ -14,9 +16,13 @@ import { MongooseModule } from '@nestjs/mongoose';
         uri : configService.get<string>('MONGODB_URI')
       }),
       inject:[ConfigService],
-    })
+    }),
+    UserModule,
+    MailModule,
+    AuthModule,
+    ProductModule
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}

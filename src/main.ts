@@ -3,6 +3,9 @@ import { AppModule } from './app.module';
 import { log } from 'console';
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { ValidationTypes } from 'class-validator';
+import { UserService } from './user/user.service'
+import { RegisterUserDto } from './user/dto/register-user.dto';
+import { UserRole } from './user/schemas/user.schema'
 import { ApiCookieAuth, DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import * as cookieParser from 'cookie-parser';
 
