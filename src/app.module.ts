@@ -20,7 +20,7 @@ import { ProductModule } from './product/product.module';
     UserModule,
     MailModule,
     AuthModule,
-    ProductModule
+    ProductModule,
   ],
   controllers: [],
   providers: [],
